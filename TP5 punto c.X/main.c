@@ -64,41 +64,72 @@ void main(void) {
         }
         switch (L_EX) {
             case NEUTRO: //estado neutro
-                if (valor == '*')
+                muestroLCD(uni, 0x00);
+                if (valor == '*') {
                     valorguardado = uni;
-
-
+                    clear_LCD();
+                    uni = 0;
+                }
                 if (contrasena == valorguardado) validacion = 1;
                 if (validacion == 1) { //si la contraseña P es confirmada
 
-                    if (valor == 'A') L_EX = ESCRITURA; //entro en escritura
-                    if (valor == 'B') L_EX = LECTURA; //entro en lectura 
+                    if (valor == 'A') {
+                        clear_LCD();
+                        set_CURSOR(0x9);
+                        msg2LCD("escritura");
+                        L_EX = ESCRITURA;
+                    } //entro en escritura
+                    if (valor == 'B') {
+                        clear_LCD();
+                        set_CURSOR(0x09);
+                        msg2LCD("lectura");
+                        L_EX = LECTURA; //entro en lectura 
+                    }
                 }
                 break;
             case ESCRITURA:
                 cont = 0;
                 switch (cont) {
                     case 0:
+                        muestroLCD(uni, 0x00);
                         if (valor == '*') { //presiono la tecla de accion y guardo contraseña P
                             escriboEE(uni, 3);
                             cont = 1;
+                            clear_LCD();
+                            uni = 0;
                         }
-                        if (valor == '#') cont = 1; //salteo paso
+                        if (valor == '#') {
+                            cont = 1; //salteo paso
+                            clear_LCD();
+                            uni = 0;
+                        }
 
                         break;
                     case 1:
                         if (valor == '*') { // presiono la tecla de accion y guado abertura
                             escriboEE(uni, 1);
                             cont = 2;
+                            clear_LCD();
+                            uni = 0;
                         }
-                        if (valor == '#') cont = 2; //salteo paso
+                        if (valor == '#') {
+                            cont = 2;
+                            clear_LCD();
+                            uni = 0;
+                        } //salteo paso
                         break;
                     case 2:
                         if (valor == '*') //presiono la tecla de accion y guado guardo cerradura
                             escriboEE(uni, 2);
+                        clear_LCD();
+                        uni = 0;
                         L_EX = NEUTRO; //vuelvo a neutro
                 }
-                if (valor == '#') L_EX = NEUTRO; //vuelvo a neutro
+                if (valor == '#') {
+                    L_EX = NEUTRO; //vuelvo a neutro
+                    clear_LCD();
+                    uni = 0;
+                }
 
                 break;
 
@@ -106,23 +137,30 @@ void main(void) {
             case LECTURA:
                 abertura = leoEE(1);
                 cerradura = leoEE(2);
-
+                muestroLCD(uni,0x00);
                 if (valor == '*') { //detecto la clave
                     confirmacion = uni;
+                    clear_LCD();
+                    uni=0;
                 }
                 if (confirmacion == abertura) { //confirmacion de abertura
                     //carcterabertura();//
                     confirmacion = 0;
+                    uni=0;
                     if (tiempo > 30000) { //si pasa 30s abertura se cierra
-                        //caractercerradura//
+                        caractercerradura();
+                        uni=0;
+                        confirmacion=0;
                     }
 
                 } else
                     if (confirmacion == cerradura) { //confirmo cerradura
-                    //caractercerradura();//
+                    caractercerradura();
                     confirmacion = 0;
-                } else
+                    uni=0;
+                } else{
                     confirmacion = 0;
+                uni=0;}
                 if (valor == '#') L_EX = NEUTRO; //vuelvo a neutro
 
 
