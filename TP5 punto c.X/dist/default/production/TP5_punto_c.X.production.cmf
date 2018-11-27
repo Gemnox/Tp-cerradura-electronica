@@ -1,0 +1,837 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.o
+idloc IDLOC 0 200000 200000 8 1
+init CODE 0 200E 200E 4 1
+reset_vec CODE 0 2000 2000 4 1
+config CONFIG 0 300000 300000 E 1
+$dist/default/production\TP5_punto_c.X.production.o
+cinit CODE 0 7D66 7D66 3A 1
+intcode_body CODE 0 7D30 7D30 36 1
+text0 CODE 0 7E2E 7E2E A4 1
+text1 CODE 0 7C48 7C48 16 1
+text2 CODE 0 7ED2 7ED2 12E 1
+text3 CODE 0 7C1E 7C1E C 1
+text4 CODE 0 7C12 7C12 C 1
+text5 CODE 0 7CB6 7CB6 26 1
+text6 CODE 0 7C96 7C96 20 1
+text7 CODE 0 7C5E 7C5E 18 1
+text8 CODE 0 7D04 7D04 2C 1
+text9 CODE 0 7DA0 7DA0 8E 1
+nvCOMRAM COMRAM 1 3B 3B 2 1
+text10 CODE 0 7C2A 7C2A E 1
+text11 CODE 0 7C76 7C76 20 1
+text12 CODE 0 7CDC 7CDC 28 1
+text14 CODE 0 7BF0 7BF0 A 1
+text15 CODE 0 7C38 7C38 10 1
+text16 CODE 0 7C06 7C06 C 1
+idataCOMRAM CODE 0 7BFB 7BFB B 1
+cstackCOMRAM COMRAM 1 32 32 9 1
+temp COMRAM 1 3D 3D 1 1
+intcode CODE 0 2008 2008 6 1
+smallconst SMALLCONST 0 2018 2018 12 1
+dataCOMRAM COMRAM 1 27 27 B 1
+bssCOMRAM COMRAM 1 1 1 26 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 60-7FF 1
+SFR F60-FFF 1
+BANK0 60-FF 1
+BANK1 100-1FF 1
+BANK2 200-2FF 1
+BANK3 300-3FF 1
+BANK4 400-4FF 1
+BANK5 500-5FF 1
+BANK6 600-6FF 1
+BANK7 700-7FF 1
+CONST 2004-2005 1
+CONST 2012-2015 1
+CONST 202A-7BEF 1
+CONST 7BFA-7BFA 1
+STACK 60-7FF 1
+SMALLCONST 2004-2005 1
+SMALLCONST 2012-2015 1
+SMALLCONST 202A-7BEF 1
+SMALLCONST 7BFA-7BFA 1
+CODE 2004-2005 1
+CODE 2012-2015 1
+CODE 202A-7BEF 1
+CODE 7BFA-7BFA 1
+BIGRAM 3E-7FF 1
+COMRAM 3E-5F 1
+EEDATA F00000-F000FF 1
+FARRAM 0-0 1
+MEDIUMCONST 2004-2005 1
+MEDIUMCONST 2012-2015 1
+MEDIUMCONST 202A-7BEF 1
+MEDIUMCONST 7BFA-7BFA 1
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production\TP5_punto_c.X.production.o
+2008 intcode CODE >153:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+2008 intcode CODE >78:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7C06 text16 CODE >192:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7C06 text16 CODE >193:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7C08 text16 CODE >194:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7C0A text16 CODE >195:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7C0E text16 CODE >196:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7C10 text16 CODE >197:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7C38 text15 CODE >156:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7C38 text15 CODE >157:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7BF0 text14 CODE >199:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7BF0 text14 CODE >201:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7D30 intcode_body CODE >78:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7D32 intcode_body CODE >79:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7D36 intcode_body CODE >80:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7D3A intcode_body CODE >81:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7D3C intcode_body CODE >82:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7D3E intcode_body CODE >84:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7D42 intcode_body CODE >85:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7D46 intcode_body CODE >87:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7D46 intcode_body CODE >88:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7D4A intcode_body CODE >89:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7D4E intcode_body CODE >90:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7D50 intcode_body CODE >91:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7D50 intcode_body CODE >92:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7D54 intcode_body CODE >93:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7D58 intcode_body CODE >94:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7D5C intcode_body CODE >95:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7D5E intcode_body CODE >96:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7D62 intcode_body CODE >101:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7D62 intcode_body CODE >102:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7CDC text12 CODE >137:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7CDC text12 CODE >140:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7CE0 text12 CODE >141:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7CE2 text12 CODE >142:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7CE4 text12 CODE >143:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7CE4 text12 CODE >144:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7CE6 text12 CODE >145:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7CEE text12 CODE >146:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7CF0 text12 CODE >147:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7CF2 text12 CODE >148:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7CF4 text12 CODE >149:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7CF6 text12 CODE >150:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7CFC text12 CODE >151:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7CFE text12 CODE >152:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7D02 text12 CODE >153:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7C76 text11 CODE >116:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7C78 text11 CODE >118:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7C7C text11 CODE >119:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7C7E text11 CODE >122:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7C84 text11 CODE >124:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7C86 text11 CODE >126:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7C8A text11 CODE >127:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7C8C text11 CODE >130:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7C92 text11 CODE >132:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7C94 text11 CODE >134:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7C2A text10 CODE >107:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7C2C text10 CODE >109:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7C2E text10 CODE >110:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7C30 text10 CODE >111:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7C36 text10 CODE >113:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7DA0 text9 CODE >64:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7DA0 text9 CODE >65:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7DA4 text9 CODE >66:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7DA6 text9 CODE >67:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7DA8 text9 CODE >68:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7DAA text9 CODE >71:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7DB2 text9 CODE >72:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7DBA text9 CODE >74:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7DC0 text9 CODE >75:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7DC8 text9 CODE >76:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7DD0 text9 CODE >78:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7DD6 text9 CODE >79:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7DDE text9 CODE >80:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7DE6 text9 CODE >82:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7DEC text9 CODE >83:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7DF4 text9 CODE >84:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7DFC text9 CODE >86:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7E02 text9 CODE >87:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7E0A text9 CODE >88:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7E12 text9 CODE >90:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7E18 text9 CODE >91:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7E20 text9 CODE >92:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7E28 text9 CODE >94:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7E2C text9 CODE >96:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7D04 text8 CODE >3:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\ConfShield2_1.c
+7D04 text8 CODE >7:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\ConfShield2_1.c
+7D08 text8 CODE >8:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\ConfShield2_1.c
+7D0C text8 CODE >9:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\ConfShield2_1.c
+7D10 text8 CODE >10:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\ConfShield2_1.c
+7D14 text8 CODE >11:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\ConfShield2_1.c
+7D18 text8 CODE >15:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\ConfShield2_1.c
+7D1A text8 CODE >17:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\ConfShield2_1.c
+7D1C text8 CODE >18:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\ConfShield2_1.c
+7D1E text8 CODE >22:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\ConfShield2_1.c
+7D22 text8 CODE >24:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\ConfShield2_1.c
+7D26 text8 CODE >27:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\ConfShield2_1.c
+7D2A text8 CODE >28:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\ConfShield2_1.c
+7D2E text8 CODE >30:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\ConfShield2_1.c
+7C5E text7 CODE >14:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\Tecnica1.c
+7C5E text7 CODE >15:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\Tecnica1.c
+7C60 text7 CODE >16:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\Tecnica1.c
+7C62 text7 CODE >17:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\Tecnica1.c
+7C64 text7 CODE >18:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\Tecnica1.c
+7C66 text7 CODE >19:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\Tecnica1.c
+7C68 text7 CODE >20:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\Tecnica1.c
+7C6A text7 CODE >21:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\Tecnica1.c
+7C6C text7 CODE >22:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\Tecnica1.c
+7C70 text7 CODE >23:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\Tecnica1.c
+7C72 text7 CODE >24:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\Tecnica1.c
+7C74 text7 CODE >25:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\Tecnica1.c
+7C96 text6 CODE >28:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\Tecnica1.c
+7C96 text6 CODE >29:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\Tecnica1.c
+7C98 text6 CODE >30:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\Tecnica1.c
+7C9A text6 CODE >31:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\Tecnica1.c
+7C9C text6 CODE >32:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\Tecnica1.c
+7C9E text6 CODE >33:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\Tecnica1.c
+7CA0 text6 CODE >34:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\Tecnica1.c
+7CA2 text6 CODE >35:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\Tecnica1.c
+7CA4 text6 CODE >36:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\Tecnica1.c
+7CA6 text6 CODE >37:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\Tecnica1.c
+7CAA text6 CODE >38:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\Tecnica1.c
+7CAE text6 CODE >39:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\Tecnica1.c
+7CB0 text6 CODE >40:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\Tecnica1.c
+7CB2 text6 CODE >41:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\Tecnica1.c
+7CB4 text6 CODE >43:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\Tecnica1.c
+7CB6 text5 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\Umul16.c
+7CB6 text5 CODE >37:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\Umul16.c
+7CC2 text5 CODE >38:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\Umul16.c
+7CCA text5 CODE >39:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\Umul16.c
+7CD2 text5 CODE >52:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\Umul16.c
+7C12 text4 CODE >41:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7C12 text4 CODE >42:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7C18 text4 CODE >43:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7C1C text4 CODE >44:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7C1E text3 CODE >47:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7C1E text3 CODE >48:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7C24 text3 CODE >49:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7C28 text3 CODE >50:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\lcd.c
+7ED2 text2 CODE >53:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7ED2 text2 CODE >55:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7ED4 text2 CODE >62:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7ED6 text2 CODE >64:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7ED6 text2 CODE >65:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7EDC text2 CODE >66:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7EE0 text2 CODE >67:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7EE2 text2 CODE >68:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7EE4 text2 CODE >69:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7EE6 text2 CODE >70:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7EEA text2 CODE >71:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7EEE text2 CODE >77:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7EEE text2 CODE >79:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7EF4 text2 CODE >80:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7EF8 text2 CODE >88:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7EF8 text2 CODE >90:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7EFC text2 CODE >91:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F00 text2 CODE >93:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F04 text2 CODE >94:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F08 text2 CODE >96:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F0C text2 CODE >97:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F10 text2 CODE >99:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F14 text2 CODE >100:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F18 text2 CODE >102:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F18 text2 CODE >107:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F1E text2 CODE >108:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F22 text2 CODE >109:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F24 text2 CODE >113:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F24 text2 CODE >114:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F26 text2 CODE >115:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F28 text2 CODE >116:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F2A text2 CODE >117:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F36 text2 CODE >118:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F3A text2 CODE >122:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F3A text2 CODE >123:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F3C text2 CODE >124:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F3E text2 CODE >125:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F40 text2 CODE >126:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F4C text2 CODE >127:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F50 text2 CODE >129:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F50 text2 CODE >130:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F52 text2 CODE >131:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F54 text2 CODE >132:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F56 text2 CODE >133:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F62 text2 CODE >134:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F66 text2 CODE >136:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F66 text2 CODE >137:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F68 text2 CODE >138:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F6A text2 CODE >139:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F6C text2 CODE >140:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F78 text2 CODE >141:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F7C text2 CODE >142:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F7C text2 CODE >149:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F7E text2 CODE >150:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F80 text2 CODE >151:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F82 text2 CODE >152:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F84 text2 CODE >154:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F88 text2 CODE >155:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F8A text2 CODE >163:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F8E text2 CODE >164:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7F92 text2 CODE >165:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7FC0 text2 CODE >169:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7FC2 text2 CODE >171:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7FC2 text2 CODE >173:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7FD6 text2 CODE >176:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7FD6 text2 CODE >181:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7FD8 text2 CODE >182:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7FDA text2 CODE >183:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7FDC text2 CODE >184:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7FE0 text2 CODE >62:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7FFC text2 CODE >186:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7FFC text2 CODE >188:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7C48 text1 CODE >42:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7C48 text1 CODE >44:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7C4C text1 CODE >45:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7C50 text1 CODE >46:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7C54 text1 CODE >47:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7C56 text1 CODE >48:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7C58 text1 CODE >49:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7C5A text1 CODE >50:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7C5C text1 CODE >51:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\teclado.c
+7E2E text0 CODE >36:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7E2E text0 CODE >39:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7E32 text0 CODE >40:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7E36 text0 CODE >41:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7E3A text0 CODE >42:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7E3E text0 CODE >43:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7E40 text0 CODE >44:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7E42 text0 CODE >45:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7E44 text0 CODE >46:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7E48 text0 CODE >47:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7E4C text0 CODE >48:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7E50 text0 CODE >49:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7E58 text0 CODE >53:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7E58 text0 CODE >54:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7E64 text0 CODE >55:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7E6C text0 CODE >56:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7E78 text0 CODE >57:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7E98 text0 CODE >62:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7E9A text0 CODE >63:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7E9A text0 CODE >64:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7EA4 text0 CODE >66:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7EB2 text0 CODE >67:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7EC2 text0 CODE >69:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7EC6 text0 CODE >62:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7ECE text0 CODE >69:C:\Users\aleandra y raul\Downloads\TP5 punto c.X\main.c
+7D66 cinit CODE >2813:C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.
+7D66 cinit CODE >2815:C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.
+7D66 cinit CODE >2818:C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.
+7D66 cinit CODE >2972:C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.
+7D68 cinit CODE >2973:C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.
+7D6A cinit CODE >2974:C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.
+7D6C cinit CODE >2975:C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.
+7D6E cinit CODE >2976:C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.
+7D70 cinit CODE >2977:C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.
+7D72 cinit CODE >2978:C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.
+7D76 cinit CODE >2979:C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.
+7D7A cinit CODE >2980:C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.
+7D7A cinit CODE >2981:C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.
+7D7C cinit CODE >2982:C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.
+7D80 cinit CODE >2983:C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.
+7D82 cinit CODE >2984:C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.
+7D84 cinit CODE >2985:C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.
+7D86 cinit CODE >2989:C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.
+7D8A cinit CODE >2990:C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.
+7D8C cinit CODE >2991:C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.
+7D8C cinit CODE >2992:C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.
+7D8E cinit CODE >2993:C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.
+7D90 cinit CODE >2994:C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.
+7D92 cinit CODE >3000:C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.
+7D92 cinit CODE >3002:C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.
+7D94 cinit CODE >3003:C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.
+7D96 cinit CODE >3005:C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.
+7D98 cinit CODE >3006:C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.
+7D9A cinit CODE >3007:C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.
+7D9C cinit CODE >3008:C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+_tecladoIni13 7C48 0 CODE 0 text1 dist/default/production\TP5_punto_c.X.production.o
+_OffsetPeriodo 2B 0 COMRAM 1 dataCOMRAM dist/default/production\TP5_punto_c.X.production.o
+__Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\TP5_punto_c.X.production.o
+debounce@cnt0 1E 0 COMRAM 1 bssCOMRAM dist/default/production\TP5_punto_c.X.production.o
+debounce@cnt1 1D 0 COMRAM 1 bssCOMRAM dist/default/production\TP5_punto_c.X.production.o
+__Hspace_0 30000E 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__Hspace_1 3E 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__Hspace_2 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_tic_LCD 7C38 0 CODE 0 text15 dist/default/production\TP5_punto_c.X.production.o
+__Hibigdata 0 0 CODE 0 ibigdata dist/default/production\TP5_punto_c.X.production.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.o
+main@contrasena 39 0 COMRAM 1 cstackCOMRAM dist/default/production\TP5_punto_c.X.production.o
+__Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\TP5_punto_c.X.production.o
+__CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_T1CONbits FCD 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__CFG_VREGEN$ON 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__Lsmallconst 2018 0 SMALLCONST 0 smallconst dist/default/production\TP5_punto_c.X.production.o
+_LATA F89 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_LATB F8A 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_LATC F8B 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_LATD F8C 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_LATE F8D 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_L_EX 2F 0 COMRAM 1 dataCOMRAM dist/default/production\TP5_punto_c.X.production.o
+_RBIE 7F93 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_RBIF 7F90 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_RBIP 7F88 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_RBPU 7F8F 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.o
+_fila 28 0 COMRAM 1 dataCOMRAM dist/default/production\TP5_punto_c.X.production.o
+_hola 11 0 COMRAM 1 bssCOMRAM dist/default/production\TP5_punto_c.X.production.o
+_main 7E2E 0 CODE 0 text0 dist/default/production\TP5_punto_c.X.production.o
+btemp 3D 0 COMRAM 1 temp dist/default/production\TP5_punto_c.X.production.o
+start 200E 0 CODE 0 init C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.o
+_mux_tout 26 0 COMRAM 1 bssCOMRAM dist/default/production\TP5_punto_c.X.production.o
+__size_of_main 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\TP5_punto_c.X.production.o
+_bot_tout 25 0 COMRAM 1 bssCOMRAM dist/default/production\TP5_punto_c.X.production.o
+?___wmul 32 0 COMRAM 1 cstackCOMRAM dist/default/production\TP5_punto_c.X.production.o
+__size_of_tecladoIni13 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_LCD_init 7DA0 0 CODE 0 text9 dist/default/production\TP5_punto_c.X.production.o
+_LCD_tout 3B 0 COMRAM 1 nvCOMRAM dist/default/production\TP5_punto_c.X.production.o
+__Hpowerup 200E 0 CODE 0 powerup dist/default/production\TP5_punto_c.X.production.o
+_abertura 7 0 COMRAM 1 bssCOMRAM dist/default/production\TP5_punto_c.X.production.o
+_T0CONbits FD5 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+ttemp5 3E 0 COMRAM 1 temp dist/default/production\TP5_punto_c.X.production.o
+ttemp6 41 0 COMRAM 1 temp dist/default/production\TP5_punto_c.X.production.o
+ttemp7 45 0 COMRAM 1 temp dist/default/production\TP5_punto_c.X.production.o
+__LnvCOMRAM 0 0 ABS 0 nvCOMRAM dist/default/production\TP5_punto_c.X.production.o
+__HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\TP5_punto_c.X.production.o
+_marca_tecla 7C06 0 CODE 0 text16 dist/default/production\TP5_punto_c.X.production.o
+__accesstop 60 0 ABS 0 - C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.o
+intlevel0 0 0 CODE 0 text C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.o
+intlevel1 0 0 CODE 0 text C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.o
+intlevel2 0 0 CODE 0 text C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.o
+intlevel3 0 0 CODE 0 text C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.o
+__end_of_LCD_init 7E2E 0 CODE 0 text9 dist/default/production\TP5_punto_c.X.production.o
+__LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\TP5_punto_c.X.production.o
+__CFG_USBDIV$2 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\TP5_punto_c.X.production.o
+wtemp8 3E 0 COMRAM 1 temp dist/default/production\TP5_punto_c.X.production.o
+__CFG_EBTR0$OFF 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__CFG_EBTR1$OFF 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_tic_teclado 7BF0 0 CODE 0 text14 dist/default/production\TP5_punto_c.X.production.o
+_led_tout 13 0 COMRAM 1 bssCOMRAM dist/default/production\TP5_punto_c.X.production.o
+__CFG_EBTRB$OFF 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__Hifardata 0 0 CODE 0 ifardata dist/default/production\TP5_punto_c.X.production.o
+__end_of_tecladoIni13 7C5E 0 CODE 0 text1 dist/default/production\TP5_punto_c.X.production.o
+_posicionEncoder 1A 0 COMRAM 1 bssCOMRAM dist/default/production\TP5_punto_c.X.production.o
+__Hclrtext 0 0 ABS 0 clrtext dist/default/production\TP5_punto_c.X.production.o
+__pidataCOMRAM 7BFB 0 CODE 0 idataCOMRAM dist/default/production\TP5_punto_c.X.production.o
+___wmul@multiplicand 34 0 COMRAM 1 cstackCOMRAM dist/default/production\TP5_punto_c.X.production.o
+write_LCD@dato 32 0 COMRAM 1 cstackCOMRAM dist/default/production\TP5_punto_c.X.production.o
+_ADCON1 FC1 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_ADCON2 FC0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_ADRESH FC4 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.o
+__LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\TP5_punto_c.X.production.o
+_EECON1bits FA6 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_CCPR1L FBE 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\TP5_punto_c.X.production.o
+__end_of___wmul 7CDC 0 CODE 0 text5 dist/default/production\TP5_punto_c.X.production.o
+_EECON2 FA7 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_EEDATA FA8 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\TP5_punto_c.X.production.o
+tic_debounce@debounce_tic 2A 0 COMRAM 1 dataCOMRAM dist/default/production\TP5_punto_c.X.production.o
+_BAUDCONbits FB8 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\TP5_punto_c.X.production.o
+__Hintcodelo 200E 0 CODE 0 intcodelo dist/default/production\TP5_punto_c.X.production.o
+_INT0IE 7F94 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_INT0IF 7F91 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_INT1IE 7F83 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_INT1IF 7F80 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_EstadoDeLosBotones 24 0 COMRAM 1 bssCOMRAM dist/default/production\TP5_punto_c.X.production.o
+__LidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/production\TP5_punto_c.X.production.o
+__size_of_myISR 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__size_of_tecla 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__HnvCOMRAM 0 0 ABS 0 nvCOMRAM dist/default/production\TP5_punto_c.X.production.o
+_INTCON2bits FF1 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_INTCON3bits FF0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__Lintcodelo 200E 0 CODE 0 intcodelo dist/default/production\TP5_punto_c.X.production.o
+__CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+start_initialization 7D66 0 CODE 0 cinit dist/default/production\TP5_punto_c.X.production.o
+debounce@state 1F 0 COMRAM 1 bssCOMRAM dist/default/production\TP5_punto_c.X.production.o
+__HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\TP5_punto_c.X.production.o
+_TRISAbits F92 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_TRISBbits F93 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_TRISCbits F94 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_TRISEbits F96 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+___rparam_used 1 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__CFG_WDTPS$32768 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_SPBRGH FB0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_maximoEncoder 1C 0 COMRAM 1 bssCOMRAM dist/default/production\TP5_punto_c.X.production.o
+_TMR0IF 7F92 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_encoderTout 19 0 COMRAM 1 bssCOMRAM dist/default/production\TP5_punto_c.X.production.o
+__size_of_PicIni21 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_UpperByte 2C 0 COMRAM 1 dataCOMRAM dist/default/production\TP5_punto_c.X.production.o
+__Hbank0 0 0 ABS 0 bank0 dist/default/production\TP5_punto_c.X.production.o
+__Hbank1 0 0 ABS 0 bank1 dist/default/production\TP5_punto_c.X.production.o
+__Hbank2 0 0 ABS 0 bank2 dist/default/production\TP5_punto_c.X.production.o
+__Hbank3 0 0 ABS 0 bank3 dist/default/production\TP5_punto_c.X.production.o
+__Hbank4 0 0 ABS 0 bank4 dist/default/production\TP5_punto_c.X.production.o
+__Hbank5 0 0 ABS 0 bank5 dist/default/production\TP5_punto_c.X.production.o
+__Hbank6 0 0 ABS 0 bank6 dist/default/production\TP5_punto_c.X.production.o
+__Hbank7 0 0 ABS 0 bank7 dist/default/production\TP5_punto_c.X.production.o
+__Hcinit 0 0 ABS 0 cinit dist/default/production\TP5_punto_c.X.production.o
+__Hconst 0 0 CONST 0 const dist/default/production\TP5_punto_c.X.production.o
+__Hidata 0 0 CODE 0 idata dist/default/production\TP5_punto_c.X.production.o
+__Hidloc 200008 0 IDLOC 0 idloc dist/default/production\TP5_punto_c.X.production.o
+__Hnvbit 0 0 COMRAM 1 nvbit dist/default/production\TP5_punto_c.X.production.o
+__Hparam 0 0 COMRAM 1 rparam dist/default/production\TP5_punto_c.X.production.o
+__Hrdata 0 0 COMRAM 1 rdata dist/default/production\TP5_punto_c.X.production.o
+__Hstack 0 0 STACK 2 stack dist/default/production\TP5_punto_c.X.production.o
+__Htext0 0 0 ABS 0 text0 dist/default/production\TP5_punto_c.X.production.o
+__Htext1 0 0 ABS 0 text1 dist/default/production\TP5_punto_c.X.production.o
+__Htext2 0 0 ABS 0 text2 dist/default/production\TP5_punto_c.X.production.o
+__Htext3 0 0 ABS 0 text3 dist/default/production\TP5_punto_c.X.production.o
+__Htext4 0 0 ABS 0 text4 dist/default/production\TP5_punto_c.X.production.o
+__Htext5 0 0 ABS 0 text5 dist/default/production\TP5_punto_c.X.production.o
+__Htext6 0 0 ABS 0 text6 dist/default/production\TP5_punto_c.X.production.o
+__Htext7 0 0 ABS 0 text7 dist/default/production\TP5_punto_c.X.production.o
+__Htext8 0 0 ABS 0 text8 dist/default/production\TP5_punto_c.X.production.o
+__Htext9 0 0 ABS 0 text9 dist/default/production\TP5_punto_c.X.production.o
+tecla@tecla_KB 34 0 COMRAM 1 cstackCOMRAM dist/default/production\TP5_punto_c.X.production.o
+__end_of_teclas 2029 0 SMALLCONST 0 smallconst dist/default/production\TP5_punto_c.X.production.o
+__Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\TP5_punto_c.X.production.o
+__Hbigram 0 0 ABS 0 bigram dist/default/production\TP5_punto_c.X.production.o
+__smallconst 2018 0 SMALLCONST 0 smallconst C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.o
+__Hcomram 0 0 ABS 0 comram dist/default/production\TP5_punto_c.X.production.o
+__Hconfig 30000E 0 CONFIG 0 config dist/default/production\TP5_punto_c.X.production.o
+__CFG_LPT1OSC$OFF 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__Lbank0 0 0 ABS 0 bank0 dist/default/production\TP5_punto_c.X.production.o
+__Lbank1 0 0 ABS 0 bank1 dist/default/production\TP5_punto_c.X.production.o
+__Lbank2 0 0 ABS 0 bank2 dist/default/production\TP5_punto_c.X.production.o
+__Lbank3 0 0 ABS 0 bank3 dist/default/production\TP5_punto_c.X.production.o
+__Lbank4 0 0 ABS 0 bank4 dist/default/production\TP5_punto_c.X.production.o
+__Lbank5 0 0 ABS 0 bank5 dist/default/production\TP5_punto_c.X.production.o
+__Lbank6 0 0 ABS 0 bank6 dist/default/production\TP5_punto_c.X.production.o
+__Lbank7 0 0 ABS 0 bank7 dist/default/production\TP5_punto_c.X.production.o
+__Lcinit 0 0 ABS 0 cinit dist/default/production\TP5_punto_c.X.production.o
+__Lconst 0 0 CONST 0 const dist/default/production\TP5_punto_c.X.production.o
+__Lidata 0 0 CODE 0 idata dist/default/production\TP5_punto_c.X.production.o
+__Lidloc 200000 0 IDLOC 0 idloc dist/default/production\TP5_punto_c.X.production.o
+__Lnvbit 0 0 COMRAM 1 nvbit dist/default/production\TP5_punto_c.X.production.o
+__Lparam 0 0 COMRAM 1 rparam dist/default/production\TP5_punto_c.X.production.o
+__Lrdata 0 0 COMRAM 1 rdata dist/default/production\TP5_punto_c.X.production.o
+__Lstack 0 0 STACK 2 stack dist/default/production\TP5_punto_c.X.production.o
+__Ltext0 0 0 ABS 0 text0 dist/default/production\TP5_punto_c.X.production.o
+__Ltext1 0 0 ABS 0 text1 dist/default/production\TP5_punto_c.X.production.o
+__Ltext2 0 0 ABS 0 text2 dist/default/production\TP5_punto_c.X.production.o
+__Ltext3 0 0 ABS 0 text3 dist/default/production\TP5_punto_c.X.production.o
+__Ltext4 0 0 ABS 0 text4 dist/default/production\TP5_punto_c.X.production.o
+__Ltext5 0 0 ABS 0 text5 dist/default/production\TP5_punto_c.X.production.o
+__Ltext6 0 0 ABS 0 text6 dist/default/production\TP5_punto_c.X.production.o
+__Ltext7 0 0 ABS 0 text7 dist/default/production\TP5_punto_c.X.production.o
+__Ltext8 0 0 ABS 0 text8 dist/default/production\TP5_punto_c.X.production.o
+__Ltext9 0 0 ABS 0 text9 dist/default/production\TP5_punto_c.X.production.o
+__Hfarbss 0 0 FARRAM 0 farbss dist/default/production\TP5_punto_c.X.production.o
+__Lintcode_body 0 0 ABS 0 intcode_body dist/default/production\TP5_punto_c.X.production.o
+_PORTBbits F81 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_PORTDbits F83 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_PORTEbits F84 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_INTCONbits FF2 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_LowerByte 22 0 COMRAM 1 bssCOMRAM dist/default/production\TP5_punto_c.X.production.o
+__Habs1 0 0 ABS 0 abs1 dist/default/production\TP5_punto_c.X.production.o
+__Hdata 0 0 ABS 0 data dist/default/production\TP5_punto_c.X.production.o
+__Hinit 2012 0 CODE 0 init dist/default/production\TP5_punto_c.X.production.o
+__Hrbit 0 0 COMRAM 1 rbit dist/default/production\TP5_punto_c.X.production.o
+__Hrbss 0 0 COMRAM 1 rbss dist/default/production\TP5_punto_c.X.production.o
+__Htemp 3E 0 COMRAM 1 temp dist/default/production\TP5_punto_c.X.production.o
+__Htext 0 0 ABS 0 text dist/default/production\TP5_punto_c.X.production.o
+__Labs1 0 0 ABS 0 abs1 dist/default/production\TP5_punto_c.X.production.o
+__Ldata 0 0 ABS 0 data dist/default/production\TP5_punto_c.X.production.o
+__Linit 200E 0 CODE 0 init dist/default/production\TP5_punto_c.X.production.o
+__Lrbit 0 0 COMRAM 1 rbit dist/default/production\TP5_punto_c.X.production.o
+__Lrbss 0 0 COMRAM 1 rbss dist/default/production\TP5_punto_c.X.production.o
+__Ltemp 3D 0 COMRAM 1 temp dist/default/production\TP5_punto_c.X.production.o
+__Ltext 0 0 ABS 0 text dist/default/production\TP5_punto_c.X.production.o
+__CFG_XINST$OFF 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__size_of_tic_LCD 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+___wmul 7CB6 0 CODE 0 text5 dist/default/production\TP5_punto_c.X.production.o
+int$flags 3D 0 COMRAM 1 temp dist/default/production\TP5_punto_c.X.production.o
+__HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\TP5_punto_c.X.production.o
+__Hintret 0 0 ABS 0 intret dist/default/production\TP5_punto_c.X.production.o
+__Hirdata 0 0 CODE 0 irdata dist/default/production\TP5_punto_c.X.production.o
+_PR2 FCB 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__S0 30000E 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__S1 3E 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__S2 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_col 27 0 COMRAM 1 dataCOMRAM dist/default/production\TP5_punto_c.X.production.o
+_uni B 0 COMRAM 1 bssCOMRAM dist/default/production\TP5_punto_c.X.production.o
+tecla@status_KB 15 0 COMRAM 1 bssCOMRAM dist/default/production\TP5_punto_c.X.production.o
+_PicIni21 7D04 0 CODE 0 text8 dist/default/production\TP5_punto_c.X.production.o
+__pnvCOMRAM 3B 0 COMRAM 1 nvCOMRAM dist/default/production\TP5_punto_c.X.production.o
+__CFG_PLLDIV$5 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__CFG_PBADEN$OFF 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_TIMER0_INI 7C5E 0 CODE 0 text7 dist/default/production\TP5_punto_c.X.production.o
+_TIMER1_INI 7C96 0 CODE 0 text6 dist/default/production\TP5_punto_c.X.production.o
+__HidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/production\TP5_punto_c.X.production.o
+__end_of_PicIni21 7D30 0 CODE 0 text8 dist/default/production\TP5_punto_c.X.production.o
+__end_of_marca_tecla 7C12 0 CODE 0 text16 dist/default/production\TP5_punto_c.X.production.o
+__Lbigdata 0 0 BIGRAM 1 bigdata dist/default/production\TP5_punto_c.X.production.o
+__Hnvrram 0 0 COMRAM 1 nvrram dist/default/production\TP5_punto_c.X.production.o
+int_func 7D30 0 CODE 0 intcode_body dist/default/production\TP5_punto_c.X.production.o
+__end_of_tic_teclado 7BFA 0 CODE 0 text14 dist/default/production\TP5_punto_c.X.production.o
+__Lintentry 0 0 ABS 0 intentry dist/default/production\TP5_punto_c.X.production.o
+__Hramtop 800 0 RAM 0 ramtop dist/default/production\TP5_punto_c.X.production.o
+__Hrparam 0 0 COMRAM 1 rparam dist/default/production\TP5_punto_c.X.production.o
+__activetblptr 2 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__Hstruct 0 0 COMRAM 1 struct dist/default/production\TP5_punto_c.X.production.o
+__size_of___wmul 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__Htext10 0 0 ABS 0 text10 dist/default/production\TP5_punto_c.X.production.o
+__Htext11 0 0 ABS 0 text11 dist/default/production\TP5_punto_c.X.production.o
+__Htext12 0 0 ABS 0 text12 dist/default/production\TP5_punto_c.X.production.o
+__Htext14 0 0 ABS 0 text14 dist/default/production\TP5_punto_c.X.production.o
+__Htext15 0 0 ABS 0 text15 dist/default/production\TP5_punto_c.X.production.o
+__Htext16 0 0 ABS 0 text16 dist/default/production\TP5_punto_c.X.production.o
+_RCSTAbits FAB 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_PIE1bits F9D 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_MultiplicadorSet 20 0 COMRAM 1 bssCOMRAM dist/default/production\TP5_punto_c.X.production.o
+__ptext10 7C2A 0 CODE 0 text10 dist/default/production\TP5_punto_c.X.production.o
+__ptext11 7C76 0 CODE 0 text11 dist/default/production\TP5_punto_c.X.production.o
+__ptext12 7CDC 0 CODE 0 text12 dist/default/production\TP5_punto_c.X.production.o
+__ptext14 7BF0 0 CODE 0 text14 dist/default/production\TP5_punto_c.X.production.o
+__ptext15 7C38 0 CODE 0 text15 dist/default/production\TP5_punto_c.X.production.o
+__ptext16 7C06 0 CODE 0 text16 dist/default/production\TP5_punto_c.X.production.o
+__pintcode_body 7D30 0 CODE 0 intcode_body dist/default/production\TP5_punto_c.X.production.o
+__Lbigbss 0 0 BIGRAM 1 bigbss dist/default/production\TP5_punto_c.X.production.o
+__Lbigram 0 0 ABS 0 bigram dist/default/production\TP5_punto_c.X.production.o
+__CFG_BOR$ON 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__CFG_BORV$3 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__Lcomram 0 0 ABS 0 comram dist/default/production\TP5_punto_c.X.production.o
+__Lconfig 300000 0 CONFIG 0 config dist/default/production\TP5_punto_c.X.production.o
+___wmul@multiplier 32 0 COMRAM 1 cstackCOMRAM dist/default/production\TP5_punto_c.X.production.o
+_LATAbits F89 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_LATCbits F8B 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_LATDbits F8C 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_LATEbits F8D 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_desplazar_tout 1 0 COMRAM 1 bssCOMRAM dist/default/production\TP5_punto_c.X.production.o
+__end_of_TIMER0_INI 7C76 0 CODE 0 text7 dist/default/production\TP5_punto_c.X.production.o
+__Lfarbss 0 0 FARRAM 0 farbss dist/default/production\TP5_punto_c.X.production.o
+__end_of_TIMER1_INI 7CB6 0 CODE 0 text6 dist/default/production\TP5_punto_c.X.production.o
+__end_of_clear_LCD 7C1E 0 CODE 0 text4 dist/default/production\TP5_punto_c.X.production.o
+__end_of_tic_LCD 7C48 0 CODE 0 text15 dist/default/production\TP5_punto_c.X.production.o
+__Lfardata 0 0 FARRAM 0 fardata dist/default/production\TP5_punto_c.X.production.o
+Botones13@Estado_BOT 23 0 COMRAM 1 bssCOMRAM dist/default/production\TP5_punto_c.X.production.o
+_teclas 2019 0 SMALLCONST 0 smallconst dist/default/production\TP5_punto_c.X.production.o
+__size_of_clear_LCD 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__end_of_write_CMD 7C38 0 CODE 0 text10 dist/default/production\TP5_punto_c.X.production.o
+__end_of_write_LCD 7C96 0 CODE 0 text11 dist/default/production\TP5_punto_c.X.production.o
+read_BUSY@aux 32 0 COMRAM 1 cstackCOMRAM dist/default/production\TP5_punto_c.X.production.o
+__size_of_write_CMD 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__size_of_write_LCD 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+stackhi 7FF 0 ABS 0 - C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.o
+stacklo 60 0 ABS 0 - C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.o
+__Lintcode 2008 0 CODE 0 intcode dist/default/production\TP5_punto_c.X.production.o
+_minimoEncoder 1B 0 COMRAM 1 bssCOMRAM dist/default/production\TP5_punto_c.X.production.o
+__Lintret 0 0 ABS 0 intret dist/default/production\TP5_punto_c.X.production.o
+__Lirdata 0 0 CODE 0 irdata dist/default/production\TP5_punto_c.X.production.o
+_ADCON0bits FC2 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__Lspace_0 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__Lspace_1 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__Lspace_2 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__pbssCOMRAM 1 0 COMRAM 1 bssCOMRAM dist/default/production\TP5_punto_c.X.production.o
+_MedioPeriodoSet 3 0 COMRAM 1 bssCOMRAM dist/default/production\TP5_punto_c.X.production.o
+__size_of_ret_HOME 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_clear_LCD 7C12 0 CODE 0 text4 dist/default/production\TP5_punto_c.X.production.o
+_PIR1bits F9E 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\TP5_punto_c.X.production.o
+_write_CMD 7C2A 0 CODE 0 text10 dist/default/production\TP5_punto_c.X.production.o
+_write_LCD 7C76 0 CODE 0 text11 dist/default/production\TP5_punto_c.X.production.o
+__CFG_CPUDIV$OSC1_PLL2 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+end_of_initialization 7D92 0 CODE 0 cinit dist/default/production\TP5_punto_c.X.production.o
+_abertura2 5 0 COMRAM 1 bssCOMRAM dist/default/production\TP5_punto_c.X.production.o
+__Lnvrram 0 0 COMRAM 1 nvrram dist/default/production\TP5_punto_c.X.production.o
+__Hintentry 0 0 ABS 0 intentry dist/default/production\TP5_punto_c.X.production.o
+__CFG_STVREN$ON 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__Hreset_vec 2004 0 CODE 0 reset_vec dist/default/production\TP5_punto_c.X.production.o
+__Lramtop 800 0 RAM 0 ramtop dist/default/production\TP5_punto_c.X.production.o
+__Lrparam 0 0 COMRAM 1 rparam dist/default/production\TP5_punto_c.X.production.o
+__pcinit 7D66 0 CODE 0 cinit dist/default/production\TP5_punto_c.X.production.o
+__ptext0 7E2E 0 CODE 0 text0 dist/default/production\TP5_punto_c.X.production.o
+__ptext1 7C48 0 CODE 0 text1 dist/default/production\TP5_punto_c.X.production.o
+__ptext2 7ED2 0 CODE 0 text2 dist/default/production\TP5_punto_c.X.production.o
+__ptext3 7C1E 0 CODE 0 text3 dist/default/production\TP5_punto_c.X.production.o
+__ptext4 7C12 0 CODE 0 text4 dist/default/production\TP5_punto_c.X.production.o
+__ptext5 7CB6 0 CODE 0 text5 dist/default/production\TP5_punto_c.X.production.o
+__ptext6 7C96 0 CODE 0 text6 dist/default/production\TP5_punto_c.X.production.o
+__ptext7 7C5E 0 CODE 0 text7 dist/default/production\TP5_punto_c.X.production.o
+__ptext8 7D04 0 CODE 0 text8 dist/default/production\TP5_punto_c.X.production.o
+__ptext9 7DA0 0 CODE 0 text9 dist/default/production\TP5_punto_c.X.production.o
+__Lstruct 0 0 COMRAM 1 struct dist/default/production\TP5_punto_c.X.production.o
+__Ltext10 0 0 ABS 0 text10 dist/default/production\TP5_punto_c.X.production.o
+__Ltext11 0 0 ABS 0 text11 dist/default/production\TP5_punto_c.X.production.o
+__Ltext12 0 0 ABS 0 text12 dist/default/production\TP5_punto_c.X.production.o
+__Ltext14 0 0 ABS 0 text14 dist/default/production\TP5_punto_c.X.production.o
+__Ltext15 0 0 ABS 0 text15 dist/default/production\TP5_punto_c.X.production.o
+__Ltext16 0 0 ABS 0 text16 dist/default/production\TP5_punto_c.X.production.o
+__ramtop 800 0 RAM 0 ramtop C:\Users\ALEAND~1\AppData\Local\Temp\s6fo.o
+__Lpowerup 200E 0 CODE 0 powerup dist/default/production\TP5_punto_c.X.production.o
+__size_of_marca_tecla 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\TP5_punto_c.X.production.o
+__psmallconst 2018 0 SMALLCONST 0 smallconst dist/default/production\TP5_punto_c.X.production.o
+__Lreset_vec 2000 0 CODE 0 reset_vec dist/default/production\TP5_punto_c.X.production.o
+__size_of_tic_teclado 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+Send4Disp@Nro_Disp 2D 0 COMRAM 1 dataCOMRAM dist/default/production\TP5_punto_c.X.production.o
+_ret_HOME 7C1E 0 CODE 0 text3 dist/default/production\TP5_punto_c.X.production.o
+___param_bank 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__CFG_WDT$OFF 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production\TP5_punto_c.X.production.o
+_flag_kb 17 0 COMRAM 1 bssCOMRAM dist/default/production\TP5_punto_c.X.production.o
+__end_of__initialization 7D92 0 CODE 0 cinit dist/default/production\TP5_punto_c.X.production.o
+__end_of_read_BUSY 7D04 0 CODE 0 text12 dist/default/production\TP5_punto_c.X.production.o
+__CFG_WRT0$OFF 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__CFG_WRT1$OFF 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_delay_kb 16 0 COMRAM 1 bssCOMRAM dist/default/production\TP5_punto_c.X.production.o
+__CFG_WRTB$OFF 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__Libigdata 0 0 CODE 0 ibigdata dist/default/production\TP5_punto_c.X.production.o
+__CFG_WRTC$OFF 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__size_of_read_BUSY 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__Lclrtext 0 0 ABS 0 clrtext dist/default/production\TP5_punto_c.X.production.o
+__end_of_ret_HOME 7C2A 0 CODE 0 text3 dist/default/production\TP5_punto_c.X.production.o
+__CFG_FOSC$HSPLL_HS 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__CFG_PWRT$OFF 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__pcstackCOMRAM 32 0 COMRAM 1 cstackCOMRAM dist/default/production\TP5_punto_c.X.production.o
+_memoria 9 0 COMRAM 1 bssCOMRAM dist/default/production\TP5_punto_c.X.production.o
+_TXSTAbits FAC 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+write_CMD@dato 33 0 COMRAM 1 cstackCOMRAM dist/default/production\TP5_punto_c.X.production.o
+_read_BUSY 7CDC 0 CODE 0 text12 dist/default/production\TP5_punto_c.X.production.o
+__end_of_main 7ED2 0 CODE 0 text0 dist/default/production\TP5_punto_c.X.production.o
+__pintcode 2008 0 CODE 0 intcode dist/default/production\TP5_punto_c.X.production.o
+_CMCON FB4 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_EEADR FA9 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_flagCanal 18 0 COMRAM 1 bssCOMRAM dist/default/production\TP5_punto_c.X.production.o
+_PORTA F80 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_PORTB F81 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_PORTD F83 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_RCREG FAE 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__end_of_myISR 7D66 0 CODE 0 intcode_body dist/default/production\TP5_punto_c.X.production.o
+_SPBRG FAF 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_TMR0H FD7 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_TMR0L FD6 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_TMR1H FCF 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_TMR1L FCE 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_TRISA F92 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_TRISB F93 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_TRISC F94 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_TRISD F95 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_TRISE F96 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_TXREG FAD 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__end_of_tecla 8000 0 CODE 0 text2 dist/default/production\TP5_punto_c.X.production.o
+__CFG_CP0$OFF 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__CFG_CP1$OFF 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__HRAM 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__Hbss 0 0 RAM 1 bss dist/default/production\TP5_punto_c.X.production.o
+__Hram 0 0 ABS 0 ram dist/default/production\TP5_punto_c.X.production.o
+__Hsfr 0 0 ABS 0 sfr dist/default/production\TP5_punto_c.X.production.o
+__LRAM 1 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__Lbss 0 0 RAM 1 bss dist/default/production\TP5_punto_c.X.production.o
+__Lram 0 0 ABS 0 ram dist/default/production\TP5_punto_c.X.production.o
+__Lsfr 0 0 ABS 0 sfr dist/default/production\TP5_punto_c.X.production.o
+_dato1 F 0 COMRAM 1 bssCOMRAM dist/default/production\TP5_punto_c.X.production.o
+_myISR 2008 0 CODE 0 intcode dist/default/production\TP5_punto_c.X.production.o
+__CFG_CPB$OFF 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_tecla 7ED2 0 CODE 0 text2 dist/default/production\TP5_punto_c.X.production.o
+_valor D 0 COMRAM 1 bssCOMRAM dist/default/production\TP5_punto_c.X.production.o
+Leds13@i 2E 0 COMRAM 1 dataCOMRAM dist/default/production\TP5_punto_c.X.production.o
+__initialization 7D66 0 CODE 0 cinit dist/default/production\TP5_punto_c.X.production.o
+__pdataCOMRAM 27 0 COMRAM 1 dataCOMRAM dist/default/production\TP5_punto_c.X.production.o
+_T2CONbits FCA 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_frecuencia 30 0 COMRAM 1 dataCOMRAM dist/default/production\TP5_punto_c.X.production.o
+__size_of_TIMER0_INI 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__size_of_TIMER1_INI 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__Hfardata 0 0 FARRAM 0 fardata dist/default/production\TP5_punto_c.X.production.o
+___wmul@product 36 0 COMRAM 1 cstackCOMRAM dist/default/production\TP5_punto_c.X.production.o
+__Hsmallconst 202A 0 SMALLCONST 0 smallconst dist/default/production\TP5_punto_c.X.production.o
+_Multiplicador 21 0 COMRAM 1 bssCOMRAM dist/default/production\TP5_punto_c.X.production.o
+tic_encoder@estado 29 0 COMRAM 1 dataCOMRAM dist/default/production\TP5_punto_c.X.production.o
+__Lifardata 0 0 CODE 0 ifardata dist/default/production\TP5_punto_c.X.production.o
+__size_of_LCD_init 0 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+_CCP1CONbits FBD 0 ABS 0 - dist/default/production\TP5_punto_c.X.production.o
+__Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\TP5_punto_c.X.production.o
+__Hintcode 200E 0 CODE 0 intcode dist/default/production\TP5_punto_c.X.production.o
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+cinit 0 7D66 7D66 3A 1
+idloc 0 200000 200000 8 1
+intcode_body 0 7D30 7D30 36 1
+text0 0 7E2E 7E2E A4 1
+text1 0 7C48 7C48 16 1
+text2 0 7ED2 7ED2 12E 1
+text3 0 7C1E 7C1E C 1
+text4 0 7C12 7C12 C 1
+text5 0 7CB6 7CB6 26 1
+text6 0 7C96 7C96 20 1
+text7 0 7C5E 7C5E 18 1
+text8 0 7D04 7D04 2C 1
+text9 0 7DA0 7DA0 8E 1
+text10 0 7C2A 7C2A E 1
+text11 0 7C76 7C76 20 1
+text12 0 7CDC 7CDC 28 1
+text14 0 7BF0 7BF0 A 1
+text15 0 7C38 7C38 10 1
+text16 0 7C06 7C06 C 1
+idataCOMRAM 0 7BFB 7BFB B 1
+reset_vec 0 2000 2000 4 1
+intcode 0 2008 2008 A 1
+smallconst 0 2018 2018 12 1
+bssCOMRAM 1 1 1 3D 1
+config 0 300000 300000 E 1
