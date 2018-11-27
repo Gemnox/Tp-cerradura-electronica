@@ -78,12 +78,14 @@ void main(void) {
                         set_CURSOR(0x9);
                         msg2LCD("escritura");
                         L_EX = ESCRITURA;
+                        uni=0;
                     } //entro en escritura
                     if (valor == 'B') {
                         clear_LCD();
                         set_CURSOR(0x09);
                         msg2LCD("lectura");
-                        L_EX = LECTURA; //entro en lectura 
+                        L_EX = LECTURA;
+                        uni=0;//entro en lectura 
                     }
                 }
                 break;
@@ -161,8 +163,8 @@ void main(void) {
                 } else{
                     confirmacion = 0;
                 uni=0;}
-                if (valor == '#') L_EX = NEUTRO; //vuelvo a neutro
-
+                if (valor == '#'){ L_EX = NEUTRO; //vuelvo a neutro
+                clear_LCD();}
 
                 break;
 
@@ -230,15 +232,15 @@ void escriboEE(unsigned int aux, unsigned char addrs) {
         Memh2 = ((aux >> 8) & 0xFF);
         Meml2 = (aux & 0xFF);
         EEwrite2(3, Meml2);
-        EEwrite2(4, Memh2);
+        EEwrite2(4, Memh2);}
         if (addrs == 3) {
             Memh3 = ((aux >> 8) & 0xFF);
             Meml3 = (aux & 0xFF);
-            EEwrite2(3, Meml3);
-            EEwrite2(4, Memh3);
+            EEwrite2(5, Meml3);
+            EEwrite2(6, Memh3);
         }
     }
-}
+
 
 unsigned int leoEE(unsigned char adr) {
     unsigned char memoriaL = 0, memoriaH = 0, memoriaL2 = 0, memoriaH2 = 0;
@@ -255,8 +257,8 @@ unsigned int leoEE(unsigned char adr) {
         Mem = ((unsigned int) memoriaH2 << 8) + memoriaL2;
     }
     if (adr == 3) {
-        memoriaL3 = EEread2(3);
-        memoriaH3 = EEread2(4);
+        memoriaL3 = EEread2(5);
+        memoriaH3 = EEread2(6);
         Mem = ((unsigned int) memoriaH3 << 8) + memoriaL3;
         return Mem;
     }
