@@ -49,7 +49,7 @@ void main(void) {
     clear_LCD();
     ret_HOME();
     unsigned int contrasena = 0, validacion = 0, valorguardado = 0;
-    unsigned char cont = 0;
+    unsigned char cont = 0, cont1 = 0;
     unsigned int abertura, cerradura, confirmacion;
     escriboEE(1111, 3);
     contrasena = leoEE(3);
@@ -64,107 +64,134 @@ void main(void) {
         }
         switch (L_EX) {
             case NEUTRO: //estado neutro
-                muestroLCD(uni, 0x00);
+                if(validacion==0){muestroLCD(uni, 0x0B);
+                set_CURSOR(0x00);
+                msg2LCD("contra:");}
                 if (valor == '*') {
-                    valorguardado = uni;
                     clear_LCD();
+                    valorguardado = uni;
                     uni = 0;
                 }
-                if (contrasena == valorguardado) validacion = 1;
+                if (contrasena == valorguardado) {
+                   clear_LCD();
+                   while(tiempo<5000){ 
+                   set_CURSOR(0x00);
+                    msg2LCD("contra correcta");
+                   }
+                   clear_LCD();
+                    validacion = 1; 
+                    valorguardado=0;
+                    
+                }
                 if (validacion == 1) { //si la contraseña P es confirmada
-
+                    
+                    set_CURSOR(0x05);
+                    msg2LCD("A=escritura");
+                    set_CURSOR(0x47);
+                    msg2LCD("B=lectura");
                     if (valor == 'A') {
                         clear_LCD();
-                        set_CURSOR(0x9);
-                        msg2LCD("escritura");
+                        uni = 0;
+                        cont = 0;
                         L_EX = ESCRITURA;
-                        uni=0;
-                    } //entro en escritura
+                    }
+
                     if (valor == 'B') {
                         clear_LCD();
-                        set_CURSOR(0x09);
-                        msg2LCD("lectura");
+                        uni = 0; //entro en lectura
                         L_EX = LECTURA;
-                        uni=0;//entro en lectura 
                     }
+
+                }
+                if (valor == '#') {
+                    clear_LCD();
+                    uni = 0;
+
                 }
                 break;
             case ESCRITURA:
-                cont = 0;
+
+                muestroLCD(uni, 0x00);
                 switch (cont) {
                     case 0:
-                        muestroLCD(uni, 0x00);
+                        set_CURSOR(0x06);
+                        msg2LCD("principal");
                         if (valor == '*') { //presiono la tecla de accion y guardo contraseña P
                             escriboEE(uni, 3);
-                            cont = 1;
                             clear_LCD();
                             uni = 0;
+                            cont = 1;
                         }
                         if (valor == '#') {
-                            cont = 1; //salteo paso
+                            //salteo paso
                             clear_LCD();
                             uni = 0;
+                            cont = 1;
                         }
-
                         break;
                     case 1:
+
+                        set_CURSOR(0x07);
+                        msg2LCD("apertura");
                         if (valor == '*') { // presiono la tecla de accion y guado abertura
                             escriboEE(uni, 1);
-                            cont = 2;
                             clear_LCD();
                             uni = 0;
+                            cont = 2;
                         }
                         if (valor == '#') {
-                            cont = 2;
+
                             clear_LCD();
                             uni = 0;
+                            cont = 2;
                         } //salteo paso
                         break;
                     case 2:
-                        if (valor == '*') //presiono la tecla de accion y guado guardo cerradura
+                        set_CURSOR(0x07);
+                        msg2LCD("cerradura");
+                        if (valor == '*') { //presiono la tecla de accion y guado guardo cerradura
+                            clear_LCD();
                             escriboEE(uni, 2);
-                        clear_LCD();
-                        uni = 0;
-                        L_EX = NEUTRO; //vuelvo a neutro
+                            uni = 0;
+                            L_EX = NEUTRO; //vuelvo a neutro
+                        }
+                        if (valor == '#') {
+                            clear_LCD();
+                            L_EX = NEUTRO; //vuelvo a neutro
+                            uni = 0;
+                        }
+                        break;
                 }
-                if (valor == '#') {
-                    L_EX = NEUTRO; //vuelvo a neutro
-                    clear_LCD();
-                    uni = 0;
-                }
-
                 break;
 
-                break;
             case LECTURA:
                 abertura = leoEE(1);
                 cerradura = leoEE(2);
-                muestroLCD(uni,0x00);
+                muestroLCD(uni, 0x00);
                 if (valor == '*') { //detecto la clave
                     confirmacion = uni;
                     clear_LCD();
-                    uni=0;
+                    uni = 0;
                 }
                 if (confirmacion == abertura) { //confirmacion de abertura
                     //carcterabertura();//
                     confirmacion = 0;
-                    uni=0;
-                    if (tiempo > 30000) { //si pasa 30s abertura se cierra
-                        caractercerradura();
-                        uni=0;
-                        confirmacion=0;
-                    }
+                    uni = 0;
+
 
                 } else
                     if (confirmacion == cerradura) { //confirmo cerradura
                     caractercerradura();
                     confirmacion = 0;
-                    uni=0;
-                } else{
+                    uni = 0;
+                } else {
                     confirmacion = 0;
-                uni=0;}
-                if (valor == '#'){ L_EX = NEUTRO; //vuelvo a neutro
-                clear_LCD();}
+                    uni = 0;
+                }
+                if (valor == '#') {
+                    L_EX = NEUTRO; //vuelvo a neutro
+                    clear_LCD();
+                }
 
                 break;
 
@@ -182,8 +209,10 @@ void __interrupt myISR(void) {
         TMR0H = 0xFF;
         INTCONbits.TMR0IF = 0;
 
+        tiempo++;
         tic_LCD();
         tic_teclado();
+
 
     }
     if (RBIF) {
@@ -232,15 +261,15 @@ void escriboEE(unsigned int aux, unsigned char addrs) {
         Memh2 = ((aux >> 8) & 0xFF);
         Meml2 = (aux & 0xFF);
         EEwrite2(3, Meml2);
-        EEwrite2(4, Memh2);}
-        if (addrs == 3) {
-            Memh3 = ((aux >> 8) & 0xFF);
-            Meml3 = (aux & 0xFF);
-            EEwrite2(5, Meml3);
-            EEwrite2(6, Memh3);
-        }
+        EEwrite2(4, Memh2);
     }
-
+    if (addrs == 3) {
+        Memh3 = ((aux >> 8) & 0xFF);
+        Meml3 = (aux & 0xFF);
+        EEwrite2(5, Meml3);
+        EEwrite2(6, Memh3);
+    }
+}
 
 unsigned int leoEE(unsigned char adr) {
     unsigned char memoriaL = 0, memoriaH = 0, memoriaL2 = 0, memoriaH2 = 0;
