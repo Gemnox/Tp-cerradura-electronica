@@ -69,6 +69,7 @@ void main(void) {
         }
         switch (L_EX) {
             case NEUTRO: //estado neutro
+               tiempo = 0;
                 if (validacion == 0) {
                     muestroLCD(uni, 0x0B);
                     set_CURSOR(0x00);
@@ -103,7 +104,17 @@ void main(void) {
                     clear_LCD();
                     flag = 0;
                 }
-                if (validacion == 1) { //si la contraseña P es confirmada
+                if(contrasena<0){
+                     clear_LCD();
+                    while (tiempo < 2000) {
+                        set_CURSOR(0x00);
+                        msg2LCD("sin contra");
+                    validacion=1;
+                    valorguardado=0;
+                    flag=0;
+                
+                }
+                if (validacion == 1) { //si la contraseÃ±a P es confirmada
 
                     set_CURSOR(0x05);
                     msg2LCD("A=escritura");
@@ -136,7 +147,7 @@ void main(void) {
                     case 0:
                         set_CURSOR(0x06);
                         msg2LCD("principal");
-                        if (valor == '*') { //presiono la tecla de accion y guardo contraseña P
+                        if (valor == '*') { //presiono la tecla de accion y guardo contraseÃ±a P
                             escriboEE(uni, 3);
                             clear_LCD();
                             uni = 0;
@@ -199,7 +210,16 @@ void main(void) {
                     while (tiempo < 2000) {
                         set_CURSOR(0x00);
                         msg2LCD("abierto");   
-                    }  
+                    } 
+                    clear_LCD();
+                    set_CURSOR(0x00);
+                    msg2LCD("cerrado");
+                    
+                }
+                 if(confirmacion == cerradura) {
+                    set_CURSOR(0x00);
+                    msg2LCD("cerrado");
+                 }
                     
                 
 
