@@ -48,14 +48,19 @@ void main(void) {
     LCD_init();
     clear_LCD();
     ret_HOME();
-    unsigned int contrasena = 0, validacion = 0, valorguardado = 0;
-    unsigned char cont = 0, cont1 = 0;
+    unsigned int contrasena = 6666, validacion = 0, valorguardado = 0;
+    unsigned char cont = 0, cont1;
     unsigned int abertura, cerradura, confirmacion;
+
     escriboEE(1111, 3);
     contrasena = leoEE(3);
 
 
+
     while (1) {
+
+
+
         valor = tecla();
         if (valor != NO_TECLA) { // si la tecla esta presionada
             if (uni < 1000) {
@@ -64,27 +69,42 @@ void main(void) {
         }
         switch (L_EX) {
             case NEUTRO: //estado neutro
-                if(validacion==0){muestroLCD(uni, 0x0B);
-                set_CURSOR(0x00);
-                msg2LCD("contra:");}
+                if (validacion == 0) {
+                    muestroLCD(uni, 0x0B);
+                    set_CURSOR(0x00);
+                    msg2LCD("contra:");
+                }
                 if (valor == '*') {
                     clear_LCD();
                     valorguardado = uni;
                     uni = 0;
+                    tiempo = 0;
+                    flag = 1;
+
                 }
                 if (contrasena == valorguardado) {
-                   clear_LCD();
-                   while(tiempo<5000){ 
-                   set_CURSOR(0x00);
-                    msg2LCD("contra correcta");
-                   }
-                   clear_LCD();
-                    validacion = 1; 
-                    valorguardado=0;
-                    
+                    clear_LCD();
+                    while (tiempo < 2000) {
+                        set_CURSOR(0x00);
+                        msg2LCD("contra correcta");
+                    }
+                    clear_LCD();
+                    validacion = 1;
+                    valorguardado = 0;
+                    flag = 0;
+
+                }
+                if (contrasena != valorguardado && flag == 1) {
+                    clear_LCD();
+                    while (tiempo < 2000) {
+                        set_CURSOR(0x00);
+                        msg2LCD("contra incorrecta");
+                    }
+                    clear_LCD();
+                    flag = 0;
                 }
                 if (validacion == 1) { //si la contraseña P es confirmada
-                    
+
                     set_CURSOR(0x05);
                     msg2LCD("A=escritura");
                     set_CURSOR(0x47);
@@ -168,26 +188,23 @@ void main(void) {
                 abertura = leoEE(1);
                 cerradura = leoEE(2);
                 muestroLCD(uni, 0x00);
-                if (valor == '*') { //detecto la clave
-                    confirmacion = uni;
+                if (valor == '*') {
                     clear_LCD();
-                    uni = 0;
+                    confirmacion = uni;
+                    tiempo = 0;
                 }
-                if (confirmacion == abertura) { //confirmacion de abertura
-                    //carcterabertura();//
-                    confirmacion = 0;
-                    uni = 0;
+                if (confirmacion == abertura) {
+                    
+                    clear_LCD();
+                    while (tiempo < 2000) {
+                        set_CURSOR(0x00);
+                        msg2LCD("abierto");   
+                    }  
+                    
+                
 
 
-                } else
-                    if (confirmacion == cerradura) { //confirmo cerradura
-                    caractercerradura();
-                    confirmacion = 0;
-                    uni = 0;
-                } else {
-                    confirmacion = 0;
-                    uni = 0;
-                }
+
                 if (valor == '#') {
                     L_EX = NEUTRO; //vuelvo a neutro
                     clear_LCD();
@@ -250,7 +267,7 @@ void muestroLCD(int contador, int pos) {
 }
 
 void escriboEE(unsigned int aux, unsigned char addrs) {
-    unsigned char Memh = 0, Meml = 0, Memh2 = 0, Meml2 = 0, Memh3, Meml3;
+    unsigned char Memh, Meml, Memh2, Meml2, Memh3, Meml3;
     if (addrs == 1) {
         Memh = ((aux >> 8) & 0xFF);
         Meml = (aux & 0xFF);
@@ -272,9 +289,9 @@ void escriboEE(unsigned int aux, unsigned char addrs) {
 }
 
 unsigned int leoEE(unsigned char adr) {
-    unsigned char memoriaL = 0, memoriaH = 0, memoriaL2 = 0, memoriaH2 = 0;
-    unsigned char memoriaH3 = 0, memoriaL3 = 0;
-    unsigned int Mem = 0;
+    unsigned char memoriaL, memoriaH, memoriaL2, memoriaH2;
+    unsigned char memoriaH3, memoriaL3;
+    unsigned int Mem;
     if (adr == 1) {
         memoriaL = EEread2(1);
         memoriaH = EEread2(2);
@@ -289,8 +306,9 @@ unsigned int leoEE(unsigned char adr) {
         memoriaL3 = EEread2(5);
         memoriaH3 = EEread2(6);
         Mem = ((unsigned int) memoriaH3 << 8) + memoriaL3;
-        return Mem;
+
     }
+    return Mem;
 }
 
 void caractercerradura(void) {
