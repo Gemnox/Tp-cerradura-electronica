@@ -20,12 +20,14 @@ void muestroLCD(int, int);
 void escriboEE(unsigned int, unsigned char);
 unsigned int leoEE(unsigned char);
 void caractercerradura(void);
-void caracterabertura(void);
+void caracterapertura(void);
+void creacioncaracter(void);
 unsigned int hola;
 int dato1 = 0;
 unsigned int valor, uni = 0;
 unsigned int memoria = 0;
 unsigned int tiempo = 0;
+unsigned char flag2 = 1;
 
 typedef enum Cerradura {
     LECTURA,
@@ -37,7 +39,7 @@ ESTADOCERRADURAX L_EX = NEUTRO; //estado del boton
 /*variables globales ********************************************************/
 void main(void) {
     unsigned char hola1, hola2;
-    unsigned int flag;
+    unsigned int flag, flag1 = 1;
     PicIni21();
     TIMER0_INI();
     TIMER1_INI();
@@ -48,32 +50,47 @@ void main(void) {
     LCD_init();
     clear_LCD();
     ret_HOME();
+    creacioncaracter();
     unsigned int contrasena = 6666, validacion = 0, valorguardado = 0;
     unsigned char cont = 0, cont1;
     unsigned int abertura, cerradura, confirmacion;
 
-    escriboEE(1111, 3);
-    contrasena = leoEE(3);
+
+    contrasena = leoEE(2);
 
 
 
     while (1) {
-
-
 
         valor = tecla();
         if (valor != NO_TECLA) { // si la tecla esta presionada
             if (uni < 1000) {
                 uni = (uni * 10) + valor;
             }
+
         }
         switch (L_EX) {
             case NEUTRO: //estado neutro
-               tiempo = 0;
+                tiempo = 0;
+                if (contrasena == leoEE(3) && flag1 == 1) {
+                    clear_LCD();
+                    flag1 = 0;
+                    while (tiempo < 2000) {
+                        set_CURSOR(0x00);
+                        msg2LCD("Enter");
+                        set_CURSOR((0x40));
+                        msg2LCD("Password");
+
+                    }
+                    clear_LCD();
+                    validacion = 1;
+                    valorguardado = 0;
+                    flag = 0;
+                }
                 if (validacion == 0) {
                     muestroLCD(uni, 0x0B);
                     set_CURSOR(0x00);
-                    msg2LCD("contra:");
+                    msg2LCD("Password:");
                 }
                 if (valor == '*') {
                     clear_LCD();
@@ -87,7 +104,9 @@ void main(void) {
                     clear_LCD();
                     while (tiempo < 2000) {
                         set_CURSOR(0x00);
-                        msg2LCD("contra correcta");
+                        msg2LCD("Correct");
+                        set_CURSOR(0x40);
+                        msg2LCD("Password");
                     }
                     clear_LCD();
                     validacion = 1;
@@ -99,27 +118,20 @@ void main(void) {
                     clear_LCD();
                     while (tiempo < 2000) {
                         set_CURSOR(0x00);
-                        msg2LCD("contra incorrecta");
+                        msg2LCD("Incorrect");
+                        set_CURSOR(0x40);
+                        msg2LCD("Password");
                     }
                     clear_LCD();
                     flag = 0;
                 }
-                if(contrasena<0){
-                     clear_LCD();
-                    while (tiempo < 2000) {
-                        set_CURSOR(0x00);
-                        msg2LCD("sin contra");
-                    validacion=1;
-                    valorguardado=0;
-                    flag=0;
-                
-                }
+
                 if (validacion == 1) { //si la contraseña P es confirmada
 
                     set_CURSOR(0x05);
-                    msg2LCD("A=escritura");
+                    msg2LCD("A=Escritura");
                     set_CURSOR(0x47);
-                    msg2LCD("B=lectura");
+                    msg2LCD("B=Lectura");
                     if (valor == 'A') {
                         clear_LCD();
                         uni = 0;
@@ -146,9 +158,9 @@ void main(void) {
                 switch (cont) {
                     case 0:
                         set_CURSOR(0x06);
-                        msg2LCD("principal");
+                        msg2LCD("Principal");
                         if (valor == '*') { //presiono la tecla de accion y guardo contraseña P
-                            escriboEE(uni, 3);
+                            escriboEE(uni, 2);
                             clear_LCD();
                             uni = 0;
                             cont = 1;
@@ -163,65 +175,77 @@ void main(void) {
                     case 1:
 
                         set_CURSOR(0x07);
-                        msg2LCD("apertura");
+                        msg2LCD("Apertura");
                         if (valor == '*') { // presiono la tecla de accion y guado abertura
                             escriboEE(uni, 1);
                             clear_LCD();
                             uni = 0;
-                            cont = 2;
+                            cont = L_EX = NEUTRO;
                         }
                         if (valor == '#') {
 
                             clear_LCD();
                             uni = 0;
-                            cont = 2;
+                            L_EX = NEUTRO;
                         } //salteo paso
                         break;
-                    case 2:
-                        set_CURSOR(0x07);
-                        msg2LCD("cerradura");
-                        if (valor == '*') { //presiono la tecla de accion y guado guardo cerradura
-                            clear_LCD();
-                            escriboEE(uni, 2);
-                            uni = 0;
-                            L_EX = NEUTRO; //vuelvo a neutro
-                        }
-                        if (valor == '#') {
-                            clear_LCD();
-                            L_EX = NEUTRO; //vuelvo a neutro
-                            uni = 0;
-                        }
-                        break;
+
+
                 }
                 break;
 
             case LECTURA:
                 abertura = leoEE(1);
-                cerradura = leoEE(2);
-                muestroLCD(uni, 0x00);
+                set_CURSOR(0x00);
+                msg2LCD("Password:");
+                muestroLCD(uni, 0x0B);
+
+
                 if (valor == '*') {
                     clear_LCD();
                     confirmacion = uni;
                     tiempo = 0;
+                    flag2 = 1;
                 }
                 if (confirmacion == abertura) {
-                    
+
+
                     clear_LCD();
+
+                    if (flag2 == 1 && confirmacion != abertura) {
+                        while (tiempo < 2000) {
+                            set_CURSOR(0x00);
+                            msg2LCD("Contrase�a");
+                            set_CURSOR(0x40);
+                            msg2LCD("Incorrecta");
+                        }
+                        clear_LCD();
+                        flag2 = 0;
+
+                    }
                     while (tiempo < 2000) {
                         set_CURSOR(0x00);
-                        msg2LCD("abierto");   
-                    } 
-                    clear_LCD();
-                    set_CURSOR(0x00);
-                    msg2LCD("cerrado");
-                    
+                        msg2LCD("Abierto");
+                        caracterapertura();
+                        SAL3_ON
+                        LATAbits.LA5 = 1;
+                    }
+                    tiempo = 0;
+                    while (tiempo < 2000) {
+                        set_CURSOR(0x00);
+                        msg2LCD("Cerrado");
+                        caractercerradura();
+                        confirmacion = 0;
+                        flag2 = 1;
+                        uni = 0;
+                        SAL3_ON
+                        LATAbits.LA5 = 0;
+
+
+                    }
+
                 }
-                 if(confirmacion == cerradura) {
-                    set_CURSOR(0x00);
-                    msg2LCD("cerrado");
-                 }
-                    
-                
+
 
 
 
@@ -237,6 +261,7 @@ void main(void) {
 
     }
 }
+
 
 // muestro el valor del teclado en el lcd
 
@@ -278,16 +303,24 @@ void muestroLCD(int contador, int pos) {
 
 
     set_CURSOR(pos);
-    char2LCD(umil + 48);
-    char2LCD(centena + 48);
-    char2LCD(decena + 48);
-    char2LCD(unidad + 48);
+    if (unidad > 0) {
+        char2LCD('*');
+    } else char2LCD(0 + 48);
+    if (decena > 0) {
+        char2LCD('*');
+    } else char2LCD(0 + 48);
+    if (centena > 0) {
+        char2LCD('*');
+    } else char2LCD(0 + 48);
+    if (umil > 0) {
+        char2LCD('*');
+    } else char2LCD(0 + 48);
 
 
 }
 
 void escriboEE(unsigned int aux, unsigned char addrs) {
-    unsigned char Memh, Meml, Memh2, Meml2, Memh3, Meml3;
+    unsigned char Memh, Meml, Memh2, Meml2, Memh3, Meml3, Meml4, Memh4;
     if (addrs == 1) {
         Memh = ((aux >> 8) & 0xFF);
         Meml = (aux & 0xFF);
@@ -306,11 +339,17 @@ void escriboEE(unsigned int aux, unsigned char addrs) {
         EEwrite2(5, Meml3);
         EEwrite2(6, Memh3);
     }
+    if (addrs == 4) {
+        Memh4 = ((aux >> 8) & 0xFF);
+        Meml4 = (aux & 0xFF);
+        EEwrite2(7, Meml4);
+        EEwrite2(8, Memh4);
+    }
 }
 
 unsigned int leoEE(unsigned char adr) {
     unsigned char memoriaL, memoriaH, memoriaL2, memoriaH2;
-    unsigned char memoriaH3, memoriaL3;
+    unsigned char memoriaH3, memoriaL3, memoriaH4, memoriaL4;
     unsigned int Mem;
     if (adr == 1) {
         memoriaL = EEread2(1);
@@ -328,55 +367,44 @@ unsigned int leoEE(unsigned char adr) {
         Mem = ((unsigned int) memoriaH3 << 8) + memoriaL3;
 
     }
+
     return Mem;
 }
 
 void caractercerradura(void) {
+    set_CURSOR(0x0B);
+    char2LCD(0);
+}
 
+void caracterapertura(void) {
+    set_CURSOR(0x0B);
+    char2LCD(1);
+}
+
+void creacioncaracter(void) {
     write_CMD(0b01000000);
     read_BUSY();
-    //cuadrado izquierda
-    char2LCD(0b00011111);
-    char2LCD(0b00011111);
-    char2LCD(0b00011111);
-    char2LCD(0b00011111);
-    char2LCD(0b00011111);
-    char2LCD(0b00011111);
-    char2LCD(0b00011111);
-    char2LCD(0b00011111);
-    //cuadrado derecha
-    char2LCD(0b00011111);
-    char2LCD(0b00011111);
-    char2LCD(0b00011111);
-    char2LCD(0b00011111);
-    char2LCD(0b00011111);
-    char2LCD(0b00011111);
-    char2LCD(0b00011111);
-    char2LCD(0b00011111);
-    //llave derecha
+    //candado cerrado
     char2LCD(0b00000000);
-    char2LCD(0b00000000);
-    char2LCD(0b00000000);
-    char2LCD(0b00010000);
-    char2LCD(0b00011000);
-    char2LCD(0b00011100);
     char2LCD(0b00001110);
-    char2LCD(0b00000110);
-    //llave izquierda
-    0b00000,
+    char2LCD(0b00001010);
+    char2LCD(0b00011111);
+    char2LCD(0b00011111);
+    char2LCD(0b00011011);
+    char2LCD(0b00011111);
+    char2LCD(0b00011111);
+    //candado abierto
     char2LCD(0b00000000);
-    char2LCD(0b00000000);
-    char2LCD(0b00000011);
-    char2LCD(0b00000111);
     char2LCD(0b00001110);
-    char2LCD(0b00001100);
+    char2LCD(0b00000010);
+    char2LCD(0b00011111);
+    char2LCD(0b00011111);
+    char2LCD(0b00011011);
+    char2LCD(0b00011111);
+    char2LCD(0b00011111);
 
-    set_CURSOR(0x4D);
-    char2LCD(0);
-    set_CURSOR(0x4E);
-    char2LCD(1);
-    set_CURSOR(0x0E);
-    char2LCD(2);
-    set_CURSOR(0x0D);
-    char2LCD(3);
+
+
+
+
 }
